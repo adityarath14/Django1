@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <a href="{% url 'Navigation' %}">Go To Navigation</a>
+        <h1>Loop</h1>
+        {% for val in name %}
+            <h1>{{val}}</h1>
+        {% endfor %}
+        <h1>Mobile Number</h1>
+        {% for itm in MOB %}
+            <h1>{{itm}}</h1>
+        {% endfor %}
+        </center>
+</body>
+</html>

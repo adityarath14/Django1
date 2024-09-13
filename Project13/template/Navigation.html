@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if a < 10 %}
+        <h1>{{a}} is Greater</h1>
+    {% endif %}
+    <h1>Navigator</h1>
+    <a href="{% url 'loop' %}">Go To Loop</a>
+</body>
+</html>
