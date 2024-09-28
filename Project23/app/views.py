@@ -6,7 +6,10 @@ def insert_topic(request):
     TOPICNAME=input('Enter Topic Name:')
     TO=Topic.objects.get_or_create(topic_name=TOPICNAME)
     if TO[1]:
-        return HttpResponse('New object created Successfully')
+        topics=Topic.objects.all()
+        d={'topics':topics}
+        return render(request,'display_topics.html',d)
+        #return HttpResponse('New object created Successfully')
     else:
         return HttpResponse('Dear User This Object is already exit')
 '''def insert_webpage(request):
@@ -56,7 +59,9 @@ def insert_webpage(request):
     if QLTO:
         TO=QLTO[0]
         WO=WebPage.objects.get_or_create(topic_name=TO,name=NAME,url=URL,email=EMAIL)
-        return HttpResponse('New object created successfully')
+        d={'webpage':WebPage.objects.all()}
+        return render(request,'display_webpage.html',d)
+        #return HttpResponse('New object created successfully')
     else:
         return HttpResponse('Dear User This Object is already exit')
 def insert_accessrecord(request):
@@ -67,6 +72,20 @@ def insert_accessrecord(request):
     if QLWO:
         WO=QLWO[0]
         AO=AccessRecord.objects.get_or_create(name=WO,author=AUTHOR,date=DATE)
-        return HttpResponse('New object created successfully')
+        d={'accessrecord':AccessRecord.objects.all()}
+        return render(request,'display_accessrecord.html',d)
+        #return HttpResponse('New object created successfully')
     else:
         return HttpResponse('Dear User This Object is already exit')
+def display_topics(request):
+    topics=Topic.objects.all()
+    d={'topics':topics}
+    return render(request,'display_topics.html',d)
+def display_webpage(request):
+    webpage=WebPage.objects.all()
+    d={'webpage':webpage}
+    return render(request,'display_webpage.html',d)
+def display_accessrecord(request):
+    accessrecord=AccessRecord.objects.all()
+    d={'accessrecord':accessrecord}
+    return render(request,'display_accessrecord.html',d)
