@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Display Capital</h1>
+        <table border="3px">
+            <tr>
+                <th>PK/ID</th>
+                <th>Country Id</th>
+                <th>Capital Id</th>
+                <th>Capital Name</th>
+            </tr>
+            {% for cao in capital %}
+                <tr>
+                    <td>{{cao.pk}}</td>
+                    <td>{{cao.Countryid}}</td>
+                    <td>{{cao.Capitalid}}</td>
+                    <td>{{cao.Capitalnm}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
