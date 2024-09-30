@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body 
+        {
+            background:black url("https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg") no-repeat 0px 0px fixed;
+            background-size:cover;
+        }
+        #reg-form
+        {
+            background:linear-gradient(45deg,rgb(207, 210, 191),rgb(14, 33, 40),rgb(158, 198, 187));
+            text-align:center;
+            padding:20px;
+            width:250px;
+            margin:100px auto;
+            border-radius:10px;
+            border-right:6px solid black;
+            border-left:6px solid black;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group textarea,
+        select
+        {
+            width:170px;
+            height:27px;
+            margin-bottom:5px;
+            border:none;
+            outline:none;
+            background:none;
+            color:white;
+            border-bottom:2px solid white;
+        }
+        select
+        {
+            width:175px;
+        }
+        ::placeholder
+        {
+            color:white;
+        }
+        input[type="submit"]
+        {
+            background:linear-gradient(45deg,rgb(207, 210, 191),rgb(14, 33, 40),rgb(158, 198, 187));
+            border:none;
+            outline:none;
+            color:white;
+            width:170px;
+            padding:5px 10px;
+            border-radius:10px;
+        }
+        input[type="submit"]:hover 
+        {
+            box-shadow:0 0 10px white;
+            cursor: pointer;
+        }
+        .fa
+        {
+            color:white;
+            font-size:70px;
+            position: relative;
+            top:-40px;
+            background-color:black;
+            border-radius:100%;
+            border:10px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="../fontawesome2/fontawesome-free-6.6.0-web/css/all.css">
+</head>
+<body>
+    <!-- Reg Form -->
+     <div id="reg-form">
+        <div>
+            <i class="fa fa-user-circle"></i>
+        </div>
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Enter Username">
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Enter Password">
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Enter Confirm Password">
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Description"></textarea>
+            </div>
+            <div class="form-group">
+                <select>
+                    <option>...select city...</option>
+                    <option>Bangalore</option>
+                    <option>Mysore</option>
+                    <option>Chennai</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit">
+            </div>
+        </form>
+     </div>
+</body>
+</html>
