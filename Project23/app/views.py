@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.db.models.functions import Length
 # Create your views here.
 from app.models import *
 def insert_topic(request):
@@ -78,14 +79,32 @@ def insert_accessrecord(request):
     else:
         return HttpResponse('Dear User This Object is already exit')
 def display_topics(request):
-    topics=Topic.objects.all()
+    #topics=Topic.objects.all()
+    #topics=Topic.objects.order_by('topic_name')
+    #topics=Topic.objects.order_by('-topic_name')
+    #topics=Topic.objects.order_by(Length('topic_name'))
+    #topics=Topic.objects.order_by(Length('topic_name').desc())
+    #topics=Topic.objects.exclude(topic_name='Ram Laxman')
+    topics=Topic.objects.filter(topic_name='My Father')
     d={'topics':topics}
     return render(request,'display_topics.html',d)
 def display_webpage(request):
-    webpage=WebPage.objects.all()
+    #webpage=WebPage.objects.all()
+    #webpage=WebPage.objects.order_by('name')
+    #webpage=WebPage.objects.order_by('-name')
+    #webpage=WebPage.objects.order_by(Length('name'))
+    #webpage=WebPage.objects.order_by(Length('name').desc())
+    #webpage=WebPage.objects.exclude(name='Aditya Rath')
+    webpage=WebPage.objects.filter(name='Raju')
     d={'webpage':webpage}
     return render(request,'display_webpage.html',d)
 def display_accessrecord(request):
-    accessrecord=AccessRecord.objects.all()
+    #accessrecord=AccessRecord.objects.all()
+    #accessrecord=AccessRecord.objects.order_by('author')
+    #accessrecord=AccessRecord.objects.order_by('-author')
+    #accessrecord=AccessRecord.objects.order_by(Length('author'))
+    #accessrecord=AccessRecord.objects.order_by(Length('author').desc())
+    #accessrecord=AccessRecord.objects.exclude(author='Raju')
+    accessrecord=AccessRecord.objects.filter(author='Aditya')
     d={'accessrecord':accessrecord}
     return render(request,'display_accessrecord.html',d)
