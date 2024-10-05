@@ -11,6 +11,8 @@ class DEPT(models.Model):
         return str(self.DEPTNO)
     '''def __str__(self):
         return self.LOC'''
+    
+    
 class EMP(models.Model):
     EMPNO=models.IntegerField(primary_key=True)
     ENAME=models.CharField(max_length=10)
