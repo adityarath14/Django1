@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>EmpDeptMgr Data</h1>
+        <table border="3px" Width="100%">
+            <tr>
+                <th>ENAME</th>
+                <th>MANAGER NAME</th>
+                <th>Deptartment Name</th>
+            </tr>
+            {% for edmo in LEDMO %}
+                <tr>
+                    <td>{{edmo.ENAME}}</td>
+                    <td>{{edmo.MGR.ENAME}}</td>
+                    <td>{{edmo.DEPTNO.DNAME}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
