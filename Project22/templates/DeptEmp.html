@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1>DeptEmp Data</h1>
+        {% for DO in LEDMO %}
+            <h1>{{DO.DNAME}}</h1>
+            {% for EO in DO.emp_set.all %}
+                <h2>{{EO.ENAME}}</h2>
+            {% endfor %}
+        {% endfor %}
+    </center>
+</body>
+</html>

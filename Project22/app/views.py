@@ -25,3 +25,7 @@ def EmpDeptMgr(request):
     LEDMO=EMP.objects.select_related('DEPTNO','MGR').filter(COMM__isnull=False)
     d={'LEDMO':LEDMO}
     return render(request,'EmpDeptMgr.html',d)
+def DeptEmp(request):
+    LEDMO=DEPT.objects.prefetch_related('emp_set').all()
+    d={'LEDMO':LEDMO}
+    return render(request,'DeptEmp.html',d)
