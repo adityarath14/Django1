@@ -13,7 +13,7 @@ def insert_topic(request):
         #return HttpResponse('New object created Successfully')
     else:
         return HttpResponse('Dear User This Object is already exit')
-'''def insert_webpage(request):
+def insert_webpage(request):
     TOPICNAME=input('Enter Topic Name:')
     NAME=input('Enter Name:')
     URL=input('Enter url:')
@@ -33,7 +33,7 @@ def insert_accessrecord(request):
     if AO[1]:
         return HttpResponse('New object created Successfully')
     else:
-        return HttpResponse('Dear User This Object is already exit')'''
+        return HttpResponse('Dear User This Object is already exit')
 # def insert_webpage(request):
 #     TOPICNAME=input('Enter Topic Name:')
 #     NAME=input('Enter Name:')
@@ -120,3 +120,15 @@ def display_accessrecord(request):
     # accessrecord=AccessRecord.objects.filter(date__day='14')
     d={'accessrecord':accessrecord}
     return render(request,'display_accessrecord.html',d)
+def update_webpage(request):
+    webpage=WebPage.objects.filter(name='Jay').update(url='http://www.realhero.com')
+    webpage=WebPage.objects.filter(name='Raju').update(email='rintu@gmail.com')
+    webpage=WebPage.objects.filter(email='rintu@gmail.com').update(name='Rajkishor')
+    webpage=WebPage.objects.update_or_create(name='Akash',defaults={'url':'http://www.mymother.com'})
+    TO=Topic.objects.get(topic_name='My Mother')
+    WebPage.objects.update_or_create(name='Aditya Rath',defaults={'topic_name':TO})
+    WebPage.objects.update_or_create(name='Adi',defaults={'topic_name':TO})
+    WebPage.objects.update_or_create(name='Adi',defaults={'url':'http://www.drJ.com'})
+    webpage=WebPage.objects.all()
+    d={'webpage':webpage}
+    return render(request,'display_webpage.html',d)
