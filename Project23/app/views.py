@@ -132,3 +132,10 @@ def update_webpage(request):
     webpage=WebPage.objects.all()
     d={'webpage':webpage}
     return render(request,'display_webpage.html',d)
+def delete_webpage(request):
+    WebPage.objects.filter(name='Rajkishor').delete()
+    WebPage.objects.filter(topic_name='My Mother').delete()
+    #WebPage.objects.all().delete()
+    webpage=WebPage.objects.all()
+    d={'webpage':webpage}
+    return render(request,'display_webpage.html',d)
