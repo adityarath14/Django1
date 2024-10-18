@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Access Record</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="nm">Name</label>
+            <input type="text" name="nm" id="nm"><br><br>
+            <label for="ar">Author</label>
+            <input type="text" name="ar" id="ar"><br><br>
+            <label for="dt">Date</label>
+            <input type="date" name="dt" id="dt"><br><br>
+            <input type="submit" value="insertAccessRecord">
+        </form>
+    </center>
+</body>
+</html>
