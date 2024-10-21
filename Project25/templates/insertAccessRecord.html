@@ -11,7 +11,12 @@
         <form method="POST">
             {% csrf_token %}
             <label for="nm">Name</label>
-            <input type="text" name="nm" id="nm"><br><br>
+            <!-- <input type="text" name="nm" id="nm"><br><br> -->
+            <select name="nm" id="nm">
+                {% for wo in LWO %}
+                    <option value="{{wo.id}}">{{wo.name}}</option>
+                {% endfor %}
+            </select><br><br>
             <label for="ar">Author</label>
             <input type="text" name="ar" id="ar"><br><br>
             <label for="dt">Date</label>

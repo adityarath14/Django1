@@ -9,6 +9,8 @@ def insertTopic(request):
         return HttpResponse(f'{tn}Topic is Created')
     return render(request,'insertTopic.html')
 def insertWebPage(request):
+    LTO=Topic.objects.all()
+    d={'LTO':LTO}
     if request.method=='POST':
         tn=request.POST['tn']
         nm=request.POST['nm']
@@ -17,13 +19,15 @@ def insertWebPage(request):
         TO=Topic.objects.get(topic_name=tn)
         WO=WebPage.objects.get_or_create(topic_name=TO,name=nm,url=ul,email=el)
         return HttpResponse('Webpage is Created')
-    return render(request,'insertWebPage.html')
+    return render(request,'insertWebPage.html',d)
 def insertAccessRecord(request):
+    LWO=WebPage.objects.all()
+    d={'LWO':LWO}
     if request.method=='POST':
         nm=request.POST['nm']
         ar=request.POST['ar']
         dt=request.POST['dt']
-        WO=WebPage.objects.get(name=nm)
+        WO=WebPage.objects.get(id=nm)
         AO=AccessRecord.objects.get_or_create(name=WO,author=ar,date=dt)
         return HttpResponse('AccessRecord is Created')
-    return render(request,'insertAccessRecord.html')
+    return render(request,'insertAccessRecord.html',d)
