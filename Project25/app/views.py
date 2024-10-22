@@ -31,3 +31,25 @@ def insertAccessRecord(request):
         AO=AccessRecord.objects.get_or_create(name=WO,author=ar,date=dt)
         return HttpResponse('AccessRecord is Created')
     return render(request,'insertAccessRecord.html',d)
+def select_multiple(request):
+    LTO=Topic.objects.all()
+    d={'LTO':LTO}
+    if request.method=='POST':
+        MTN=request.POST.getlist('tn')
+        EQST=WebPage.objects.none()
+        for topic in MTN:
+            EQST=EQST|WebPage.objects.filter(topic_name=topic)
+        d1={'EQST':EQST}
+        return render(request,'display_webpage.html',d1)
+    return render(request,'select_multiple.html',d)
+def select_accessrecord(request):
+    LWO=WebPage.objects.all()
+    d={'LWO':LWO}
+    if request.method=='POST':
+        MWN=request.POST.getlist('nm')
+        EQST=AccessRecord.objects.none()
+        for webpage in MWN:
+            EQST=EQST|AccessRecord.objects.filter(name=webpage)
+        d1={'EQST':EQST}
+        return render(request,'display_accessrecord.html',d1)
+    return render(request,'select_accessrecord.html',d)

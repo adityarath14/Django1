@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Display Webpage</h1>
+        <table border="3px">
+            <tr>
+                <th>PK</th>
+                <th>TopicName</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Email</th>
+            </tr>
+        {% for WO in EQST %}
+            <tr>
+                <td>{{WO.pk}}</td>
+                <td>{{WO.topic_name}}</td>
+                <td>{{WO.name}}</td>
+                <td>{{WO.url}}</td>
+                <td>{{WO.email}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

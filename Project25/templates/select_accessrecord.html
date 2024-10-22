@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Select Accessrecord</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="nm">Name</label>
+            <select name="nm" id="nm" multiple>
+                {% for wo in LWO %}
+                    <option value="{{wo.id}}">{{wo.name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <input type="submit" value="Select Accessrecord">
+        </form>
+    </center>
+</body>
+</html>

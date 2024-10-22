@@ -22,4 +22,6 @@ urlpatterns = [
     path('insertTopic/',insertTopic,name='insrtTopic'),
     path('insertWebPage/',insertWebPage,name='insertWebPage'),
     path('insertAccessRecord/',insertAccessRecord,name='insertAccessRecord'),
+    path('select_multiple/',select_multiple,name='select_multiple'),
+    path('select_accessrecord/',select_accessrecord,name='select_accessrecord'),
 ]
