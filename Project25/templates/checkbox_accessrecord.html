@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Check Box Access Record</h1>
+        <form method="POST" action="{% url 'select_accessrecord' %}">
+            {% csrf_token %}
+            <label for="nm">Name</label><br><br>
+            {% for wo in LWO %}
+            {{wo.name}}
+                <input type="checkbox" name="nm" id="nm" value="{{wo.id}}"><br><br>
+            {% endfor %}
+            <input type="submit" value="CheckBox AccessRecord">
+        </form>
+    </center>
+</body>
+</html>

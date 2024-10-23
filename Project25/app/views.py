@@ -53,3 +53,11 @@ def select_accessrecord(request):
         d1={'EQST':EQST}
         return render(request,'display_accessrecord.html',d1)
     return render(request,'select_accessrecord.html',d)
+def checkbox(request):
+    LTO=Topic.objects.all()
+    d={'LTO':LTO}
+    return render(request,'checkbox.html',d)
+def checkbox_accessrecord(request):
+    LWO=WebPage.objects.all()
+    d={'LWO':LWO}
+    return render(request,'checkbox_accessrecord.html',d)
