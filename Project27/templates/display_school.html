@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Display School</h1>
+        <table border="3px" width="10%">
+            <tr>
+                <th>School Names</th>
+            </tr>
+            {% for so in school %}
+                <tr>
+                    <td>{{so.school_name}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
