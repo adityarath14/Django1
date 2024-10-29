@@ -36,3 +36,5 @@ def insert_accessrecord(request):
         else:
             return HttpResponse('Invalid Data')
     return render(request,'insert_accessrecord.html',d)
+def show(request,data):
+    return HttpResponse('Hello {}'.format(data))
