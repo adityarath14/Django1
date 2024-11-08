@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Filters</h1>
+        <h1>{{data}}</h1>
+        <h1>{{data|lower}}</h1>
+        <h1>{{data|upper}}</h1>
+        <h1>{{data|capfirst}}</h1>
+        <h1>{{data|title}}</h1>
+        <h1>{{data|length}}</h1>
+        <h1>{{data|truncatechars:4}}</h1>
+        <h1>{{data|slice:4}}</h1>
+        <h1>{{data|truncatewords:3}}</h1>
+        <h1>{{dt}}</h1>
+        <h1>{{dt|date:'Y D A'}}</h1>
+        <h1>Aditya has {{c}} Bag{{c|pluralize}}</h1>
+        <h1>Aditya has {{c}} Bag{{c|pluralize:'es'}}</h1>
+        <h1>{{ c }} mango{{ c|pluralize }} ({{ c|pluralize:'this,these' }})</h1>
+    </center>
+</body>
+</html>
