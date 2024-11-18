@@ -16,7 +16,9 @@
     <a href="{% url 'registration' %}" class="nav-link text-white">registration Page</a>
     <a href="{% url 'home' %}" class="nav-link text-white">Home Page</a>
 {% if user.is_authenticated %}
-    <a href="{% url 'user_logout' %}" class="nav-link text-white">user_logout Page</a>    
+    <a href="{% url 'user_logout' %}" class="nav-link text-white">user_logout Page</a>
+    <a href="{% url 'profile_display' %}" class="nav-link text-white"></a>
+    <a href="{% url 'change_password' %}" class="nav-link text_white">change_password</a>    
 {% else %}
     <a href="{% url 'user_login' %}" class="nav-link text-white">user_login Page</a>
 {% endif %}   
